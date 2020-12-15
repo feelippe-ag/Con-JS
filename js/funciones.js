@@ -1,4 +1,4 @@
-
+var validacion;
 function guardarDatos(){
     var nom= document.getElementById('nom').value;
     var apel= document.getElementById('apel').value;
@@ -22,13 +22,20 @@ function guardarDatos(){
     }
     else{
         usuario.innerHTML= `
-        <h5>Bienvenido ${concat}, tambien me gusta el ${color} pero prefiero una Pera, en lugar de ${fruta}.<h5>
+        <h5 class="alert alert-success">Hola ${concat}, tambien me gusta el ${color} pero prefiero el Durazno, en lugar de la ${fruta}.<h5>
     `;
-    var validacion=true;
+    validacion=nom+" "+apel;
     }
 }
 
 function play(){
-   if( )
-}
-
+    if (validacion==undefined){
+        alert("Debe identificarse primero");
+        return;
+    }
+    else{
+       alert("Bien hecho "+validacion);
+       window.location.assign("game.html");
+       return;
+    }
+  }
