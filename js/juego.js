@@ -9,16 +9,17 @@ function enviar(){
   document.getElementById("btn-enviar").disabled=true;
   document.getElementById("numero").disabled=false;
   document.getElementById("btn-adivinar").disabled=false;
+  document.getElementById("btn-salir").disabled=false;
   document.getElementById("cantIntentos").innerHTML = "Cantidad de intentos: "+intentos;
 
 }
 
 function adivinar(){
     
-   if (contResp<intentos)
+   if (intentos>contResp )
    {
     var numero = document.getElementById("numero").value;
-    if (numero>0 && numero<100)
+    if (numero>0 && numero<101)
     {
       // aumento contador
       contResp= contResp+1;
@@ -30,11 +31,11 @@ function adivinar(){
         document.getElementById("cantIntentos").innerHTML = "Cantidad de intentos: "+falta;
       }else if(numero<numeroAdivinar){
         //numero mas chico
-        respuestas="<br>El número buscado es <span>MAYOR</span> a "+numero;
+        respuestas="<br>El número buscado es MAYOR a "+numero;
         document.getElementById("cantIntentos").innerHTML = "Cantidad de intentos: "+falta;
       }else{
         // adivinaste
-        respuestas="<br>¡¡¡ADIVINASTE!!! en número era "+numero;
+        respuestas="<br><span class='alert-success'>¡¡¡ADIVINASTE!!! el número era "+numero+"</span>";
         document.getElementById("cantIntentos").innerHTML = "Cantidad de intentos: "+falta;
         fin()
       }
@@ -42,13 +43,13 @@ function adivinar(){
       document.getElementById("numero").value="";
     }
     else{
-      respuestas="<br>"+numero+" ¡ERROR! Tiene que ser un valor numerico comprendido entre 1 y 100";
+      respuestas="<br><span class='alert-danger'> ¡ERROR! Tiene que ser un valor numerico comprendido entre 1 y 100</span>";
 
     }
    }
    else{
     document.getElementById("cantIntentos").innerHTML = "Cantidad de intentos: 0";
-     respuestas="<br> ¡¡Se acabarón los intentos!! el numero era "+numeroAdivinar;
+     respuestas="<br><span class='alert-danger'>¡¡Se acabarón los intentos!! el numero era "+numeroAdivinar+"</span>";
      fin()
    }
    
@@ -62,4 +63,12 @@ function adivinar(){
  {
     document.getElementById("numero").disabled=true;
     document.getElementById("btn-adivinar").disabled=true;
+    document.getElementById("btn-volver").disabled=false;
  }
+function volver(){
+  window.location.assign("game.html");
+}
+
+function salir(){
+  window.location.assign("index.html");
+}

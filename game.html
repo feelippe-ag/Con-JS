@@ -50,7 +50,7 @@
     <section class="main container">   
         <div class="row">
            
-          <div class="container col-md-9">
+          <div class="container col-md-7">
            
             <!-- formulario -->
                 <div class="form-group">
@@ -85,10 +85,12 @@
             
 
           </div>
-          <!-- respuestas JS -->
-          <div class="container col-md-3">
-            <h6 id="cantIntentos"></h6>
-            <p id="respuestas"></p>
+          
+          <div class="container col-md-5">         
+             
+            <!-- respuestas JS -->
+            <h3 id="cantIntentos"></h3>
+            <h4 id="respuestas"></h4>
           </div>
 
             </div>
@@ -97,9 +99,18 @@
         </div>     
         
         <hr class="my-4">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        
-
+        <div class="row">
+          <div class="col">
+           <!-- volver a jugar -->
+           <button type="submit" class="btn btn-success btn-block" onclick="volver()" id="btn-volver" disabled>Volver a Jugar</button>
+         </div>
+         <div class="col">
+            <!-- Salir -->
+           <button type="submit" class="btn btn-success btn-block" onclick="salir()" id="btn-salir" disabled>Volver al inicio</button>
+         </div>
+        </div>
+        <p id="respuestas"></p>
+      
     </section>
 
     <!-- <footer class="bg-dark text-light text-center h6 p-6">Felipe Agüero</footer> -->
@@ -107,9 +118,7 @@
     <!-- JavaScript -->
     <script src="js/juego.js" type="text/javascript"></script>
 
-
-
-
+    
 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
